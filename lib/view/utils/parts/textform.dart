@@ -17,7 +17,7 @@ class _TextFormState extends State<TextForm> {
         children: [
           TextField(
             maxLength: 5,
-            decoration: InputDecoration(
+            decoration: const InputDecoration(
               border: OutlineInputBorder(),
               labelText: '文字を入力してね',
             ),

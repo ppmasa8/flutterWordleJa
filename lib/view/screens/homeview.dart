@@ -11,7 +11,7 @@ class HomeView extends StatelessWidget {
           centerTitle: true,
           title: const Text('わーどる')
       ),
-      body: SizedBox.expand(
+      body: SingleChildScrollView(
         child: Column(
           children: [
             Container(
