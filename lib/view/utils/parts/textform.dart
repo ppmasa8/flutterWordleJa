@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 
 class TextForm extends StatefulWidget {
   const TextForm({Key? key}) : super(key: key);
@@ -17,12 +18,15 @@ class _TextFormState extends State<TextForm> {
         children: [
           TextField(
             maxLength: 5,
+            inputFormatters: <TextInputFormatter> [
+              FilteringTextInputFormatter.allow(RegExp(r'^[\u3040-\u309F]+$')),
+            ],
             decoration: const InputDecoration(
               border: OutlineInputBorder(),
               labelText: '文字を入力してね',
             ),
             onChanged: (letter) {
-
+              text = letter;
             },
           ),
         ],
