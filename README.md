@@ -1,6 +1,6 @@
 # wordle
 
-A new Flutter project.
+工数的にもそこそこ時間がかかりそうなので、一旦後回し。
 
 ## Getting Started
 
