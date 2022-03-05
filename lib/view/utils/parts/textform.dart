@@ -23,7 +23,7 @@ class _TextFormState extends State<TextForm> {
             ],
             decoration: const InputDecoration(
               border: OutlineInputBorder(),
-              labelText: '文字を入力してね',
+              labelText: 'ひらがなで文字を入力してね',
             ),
             onChanged: (letter) {
               text = letter;
