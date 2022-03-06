@@ -16,6 +16,7 @@ class _TextFormState extends State<TextForm> {
   void _updateText() {
     setState(() {
       plainText.add(textController.text);
+      textController.text = '';
       print(plainText);
     });
   }
