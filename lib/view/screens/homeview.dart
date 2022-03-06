@@ -14,11 +14,6 @@ class HomeView extends StatelessWidget {
       body: SingleChildScrollView(
         child: Column(
           children: [
-            Container(
-              width: 300,
-              height: 350,
-              color: Colors.red,
-            ),
             TextForm(),
           ],
         ),

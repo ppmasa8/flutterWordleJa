@@ -10,12 +10,12 @@ class TextForm extends StatefulWidget {
 
 class _TextFormState extends State<TextForm> {
   final textController = TextEditingController();
-  String plainText = '';
+  final plainText = <String>[];
   String text = '';
 
   void _updateText() {
     setState(() {
-      plainText = textController.text;
+      plainText.add(textController.text);
       print(plainText);
     });
   }
@@ -23,12 +23,16 @@ class _TextFormState extends State<TextForm> {
   @override
   Widget build(BuildContext context) {
     return SingleChildScrollView(
-      padding: const EdgeInsets.all(60.0),
+      padding: const EdgeInsets.all(20.0),
       child: Column(
         children: [
-          Text(
-            plainText,
-          ),
+          for (var elem in plainText) ...{
+            Text(elem,
+                style: const TextStyle(
+                  fontWeight: FontWeight.bold,
+                  fontSize: 20,
+                ))
+          },
           TextField(
             maxLength: 5,
             inputFormatters: <TextInputFormatter>[
