@@ -53,6 +53,10 @@ class _TextFormState extends State<TextForm> {
             child: const Text('Submit'),
             onPressed: _updateText,
           ),
+          Text(plainText.length.toString(),
+              style: const TextStyle(
+                fontSize: 20,
+              ))
         ],
       ),
     );
