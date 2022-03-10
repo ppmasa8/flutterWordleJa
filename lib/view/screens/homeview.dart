@@ -9,12 +9,12 @@ class HomeView extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-          centerTitle: true,
-          title: Text('わーどる',
-          style: GoogleFonts.kosugiMaru(
-            color: Colors.black,
-          )),
-          
+        centerTitle: true,
+        title: Text('わーどる',
+            style: GoogleFonts.kosugiMaru(
+              color: Colors.black,
+            )),
+        backgroundColor: Colors.white,
       ),
       body: SingleChildScrollView(
         child: Column(
