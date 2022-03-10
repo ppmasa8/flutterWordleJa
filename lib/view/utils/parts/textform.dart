@@ -23,7 +23,8 @@ class _TextFormState extends State<TextForm> {
 
   @override
   Widget build(BuildContext context) {
-    return SingleChildScrollView(
+    return Container(
+      margin: const EdgeInsets.only(top: 20.0),
       padding: const EdgeInsets.all(20.0),
       child: Column(
         children: [
