@@ -11,7 +11,7 @@ class HomeView extends StatelessWidget {
       appBar: AppBar(
         centerTitle: true,
         title: Text('わーどる',
-            style: GoogleFonts.kosugiMaru(
+            style: GoogleFonts.yuseiMagic(
               color: Colors.black,
             )),
         backgroundColor: Colors.white,

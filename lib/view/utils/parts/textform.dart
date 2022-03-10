@@ -1,5 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:google_fonts/google_fonts.dart';
+
+// できればアプリ内に出てくる文字のフォントをGoogleFontsのyuseimagicに統一して砕けた感じにしたい。
 
 class TextForm extends StatefulWidget {
   const TextForm({Key? key}) : super(key: key);
@@ -41,9 +44,11 @@ class _TextFormState extends State<TextForm> {
               FilteringTextInputFormatter.allow(RegExp(r'^[\u3040-\u309F]+$')),
             ],
             controller: textController,
-            decoration: const InputDecoration(
+            decoration: InputDecoration(
               border: OutlineInputBorder(),
               labelText: 'ひらがなで文字を入力してね',
+              labelStyle: GoogleFonts.yuseiMagic(
+              ),
             ),
             onChanged: (letter) {
               text = letter;
@@ -51,7 +56,10 @@ class _TextFormState extends State<TextForm> {
             },
           ),
           TextButton(
-            child: const Text('Submit'),
+            child: Text('決定',
+            style: GoogleFonts.yuseiMagic(
+              color: Colors.black,
+            )),
             onPressed: _updateText,
           ),
           Text(plainText.length.toString(),
