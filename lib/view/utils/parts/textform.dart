@@ -45,11 +45,12 @@ class _TextFormState extends State<TextForm> {
               maxLength: 5,
               inputFormatters: <TextInputFormatter>[
                 FilteringTextInputFormatter.allow(
+                  // ひらがな以外を弾くregex
                     RegExp(r'^[\u3040-\u309F]+$')),
               ],
               controller: textController,
               decoration: InputDecoration(
-                border: OutlineInputBorder(),
+                border: const OutlineInputBorder(),
                 labelText: 'ひらがなで文字を入力してね',
                 labelStyle: GoogleFonts.yuseiMagic(),
               ),
