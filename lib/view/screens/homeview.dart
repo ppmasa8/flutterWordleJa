@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:wordle/view/utils/parts/textform.dart';
+import 'package:wordle/view/utils/parts/contents.dart';
 
 class HomeView extends StatelessWidget {
   const HomeView({Key? key}) : super(key: key);
@@ -19,7 +19,7 @@ class HomeView extends StatelessWidget {
       body: SingleChildScrollView(
         child: Column(
           children: [
-            TextForm(),
+            Content(),
           ],
         ),
       ),

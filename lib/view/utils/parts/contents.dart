@@ -3,14 +3,14 @@ import 'package:flutter/services.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:wordle/view/utils/parts/random.dart';
 
-class TextForm extends StatefulWidget {
-  const TextForm({Key? key}) : super(key: key);
+class Content extends StatefulWidget {
+  const Content({Key? key}) : super(key: key);
 
   @override
-  _TextFormState createState() => _TextFormState();
+  _ContentState createState() => _ContentState();
 }
 
-class _TextFormState extends State<TextForm> {
+class _ContentState extends State<Content> {
   final randomString = Randomizer.Generate();
   final textController = TextEditingController();
   final plainText = <String>[];
