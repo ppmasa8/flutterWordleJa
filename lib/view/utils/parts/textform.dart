@@ -53,7 +53,7 @@ class _TextFormState extends State<TextForm> {
           TextButton(
             child: Text('決定',
                 style: GoogleFonts.yuseiMagic(
-                  fontSize: 16,
+                  fontSize: 20,
                   color: Colors.black,
                 )),
             onPressed: _updateText,
@@ -63,7 +63,7 @@ class _TextFormState extends State<TextForm> {
               child: Text(
                 "手数: ${plainText.length.toString()}",
                 style: GoogleFonts.yuseiMagic(
-                  fontSize: 20,
+                  fontSize: 16,
                   color: Colors.black,
                 ),
               )),
