@@ -29,23 +29,13 @@ class _TextFormState extends State<TextForm> {
       padding: const EdgeInsets.all(20.0),
       child: Column(
         children: [
-          for (var elem in plainText) ...{
-            Container(
-                margin: const EdgeInsets.only(bottom: 10),
-                child: Text(elem,
-                    style: GoogleFonts.yuseiMagic(
-                      fontWeight: FontWeight.bold,
-                      color: Colors.black,
-                      fontSize: 20,
-                    ))),
-          },
           Container(
             margin: const EdgeInsets.only(top: 10),
             child: TextField(
               maxLength: 5,
               inputFormatters: <TextInputFormatter>[
                 FilteringTextInputFormatter.allow(
-                  // ひらがな以外を弾くregex
+                    // ひらがな以外を弾くregex
                     RegExp(r'^[\u3040-\u309F]+$')),
               ],
               controller: textController,
@@ -69,7 +59,7 @@ class _TextFormState extends State<TextForm> {
             onPressed: _updateText,
           ),
           Container(
-              margin: const EdgeInsets.only(top: 10.0),
+              margin: const EdgeInsets.only(top: 10.0, bottom: 20),
               child: Text(
                 "手数: ${plainText.length.toString()}",
                 style: GoogleFonts.yuseiMagic(
@@ -77,6 +67,16 @@ class _TextFormState extends State<TextForm> {
                   color: Colors.black,
                 ),
               )),
+          for (var elem in plainText) ...{
+            Container(
+                margin: const EdgeInsets.only(bottom: 10),
+                child: Text(elem,
+                    style: GoogleFonts.yuseiMagic(
+                      fontWeight: FontWeight.bold,
+                      color: Colors.black,
+                      fontSize: 20,
+                    ))),
+          },
         ],
       ),
     );
