@@ -2,8 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:google_fonts/google_fonts.dart';
 
-// できればアプリ内に出てくる文字のフォントをGoogleFontsのyuseimagicに統一して砕けた感じにしたい。
-
 class TextForm extends StatefulWidget {
   const TextForm({Key? key}) : super(key: key);
 
@@ -27,45 +25,57 @@ class _TextFormState extends State<TextForm> {
   @override
   Widget build(BuildContext context) {
     return Container(
-      margin: const EdgeInsets.only(top: 20.0),
+      margin: const EdgeInsets.only(top: 12.0),
       padding: const EdgeInsets.all(20.0),
       child: Column(
         children: [
           for (var elem in plainText) ...{
-            Text(elem,
-                style: const TextStyle(
-                  fontWeight: FontWeight.bold,
-                  fontSize: 20,
-                ))
+            Container(
+                margin: const EdgeInsets.only(bottom: 10),
+                child: Text(elem,
+                    style: GoogleFonts.yuseiMagic(
+                      fontWeight: FontWeight.bold,
+                      color: Colors.black,
+                      fontSize: 20,
+                    ))),
           },
-          TextField(
-            maxLength: 5,
-            inputFormatters: <TextInputFormatter>[
-              FilteringTextInputFormatter.allow(RegExp(r'^[\u3040-\u309F]+$')),
-            ],
-            controller: textController,
-            decoration: InputDecoration(
-              border: OutlineInputBorder(),
-              labelText: 'ひらがなで文字を入力してね',
-              labelStyle: GoogleFonts.yuseiMagic(
+          Container(
+            margin: const EdgeInsets.only(top: 10),
+            child: TextField(
+              maxLength: 5,
+              inputFormatters: <TextInputFormatter>[
+                FilteringTextInputFormatter.allow(
+                    RegExp(r'^[\u3040-\u309F]+$')),
+              ],
+              controller: textController,
+              decoration: InputDecoration(
+                border: OutlineInputBorder(),
+                labelText: 'ひらがなで文字を入力してね',
+                labelStyle: GoogleFonts.yuseiMagic(),
               ),
+              onChanged: (letter) {
+                text = letter;
+                print(text);
+              },
             ),
-            onChanged: (letter) {
-              text = letter;
-              print(text);
-            },
           ),
           TextButton(
             child: Text('決定',
-            style: GoogleFonts.yuseiMagic(
-              color: Colors.black,
-            )),
+                style: GoogleFonts.yuseiMagic(
+                  fontSize: 16,
+                  color: Colors.black,
+                )),
             onPressed: _updateText,
           ),
-          Text(plainText.length.toString(),
-              style: const TextStyle(
-                fontSize: 20,
-              ))
+          Container(
+              margin: const EdgeInsets.only(top: 10.0),
+              child: Text(
+                "手数: ${plainText.length.toString()}",
+                style: GoogleFonts.yuseiMagic(
+                  fontSize: 20,
+                  color: Colors.black,
+                ),
+              )),
         ],
       ),
     );
