@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:wordle/view/utils/parts/random.dart';
 
 class TextForm extends StatefulWidget {
   const TextForm({Key? key}) : super(key: key);
@@ -10,6 +11,7 @@ class TextForm extends StatefulWidget {
 }
 
 class _TextFormState extends State<TextForm> {
+  final randomString = Randomizer.Generate();
   final textController = TextEditingController();
   final plainText = <String>[];
   String text = '';
@@ -18,7 +20,7 @@ class _TextFormState extends State<TextForm> {
     setState(() {
       plainText.add(textController.text);
       textController.text = '';
-      print(plainText);
+      print(randomString);
     });
   }
 
