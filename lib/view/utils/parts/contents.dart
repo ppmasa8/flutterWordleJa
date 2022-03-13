@@ -14,11 +14,26 @@ class _ContentState extends State<Content> {
   final randomString = Randomizer.Generate();
   final textController = TextEditingController();
   final plainText = <String>[];
+  final colorArray = <int>[0, 0, 0, 0, 0];
   String text = '';
+
+  void checkStrings(String text) {
+    for (int i = 0; i < text.length; i++) {
+      if (randomString[i] == text[i]) {
+        colorArray[i] = 2;
+      } else if (randomString.contains(text[i])) {
+        colorArray[i] = 1;
+      } else {
+        colorArray[i] = 0;
+      }
+    }
+  }
 
   void _updateText() {
     setState(() {
       plainText.add(textController.text);
+      checkStrings(textController.text);
+      print(colorArray);
       textController.text = '';
       print(randomString);
     });
