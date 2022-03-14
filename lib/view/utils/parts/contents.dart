@@ -84,13 +84,20 @@ class _ContentState extends State<Content> {
                   color: Colors.black,
                 ),
               )),
-          for (var elem in plainText) ...{
+          for (int i = 0; i < plainText.length; i++) ...{
             Container(
                 margin: const EdgeInsets.only(bottom: 10),
-                child: Text(elem,
+                child: Text(plainText[i],
                     style: GoogleFonts.yuseiMagic(
                       fontWeight: FontWeight.bold,
-                      color: Colors.black,
+                      // 位置も文字も合っていない場合は黒、
+                      // 文字が合っている場合は黄色、
+                      // 両方あっている場合は緑
+                      color: colorArray[i] == 0
+                          ? Colors.black
+                          : colorArray[i] == 2
+                              ? Colors.green
+                              : Colors.yellow,
                       fontSize: 20,
                     ))),
           },
