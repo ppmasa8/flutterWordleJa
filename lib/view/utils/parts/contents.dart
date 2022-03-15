@@ -99,7 +99,7 @@ class _ContentState extends State<Content> {
                             ? Colors.black
                             : colorArray[i * 5 + j] == 2
                                 ? Colors.green
-                                : Color.fromARGB(255, 250, 225, 0),
+                                : const Color.fromARGB(255, 250, 225, 0),
                         fontSize: 20,
                       ))),
             },
