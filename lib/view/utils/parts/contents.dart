@@ -14,24 +14,25 @@ class _ContentState extends State<Content> {
   final randomString = Randomizer.Generate();
   final textController = TextEditingController();
   final plainText = <String>[];
-  final colorArray = <int>[0, 0, 0, 0, 0];
+  final colorArray = <int>[];
   String text = '';
 
   void checkStrings(String text) {
     for (int i = 0; i < text.length; i++) {
       if (randomString[i] == text[i]) {
-        colorArray[i] = 2;
+        colorArray.add(2);
       } else if (randomString.contains(text[i])) {
-        colorArray[i] = 1;
+        colorArray.add(1);
       } else {
-        colorArray[i] = 0;
+        colorArray.add(0);
       }
     }
   }
 
   void _updateText() {
     setState(() {
-      plainText.add(textController.text);
+      plainText.addAll([textController.text]);
+      print(plainText);
       checkStrings(textController.text);
       print(colorArray);
       textController.text = '';
@@ -85,21 +86,23 @@ class _ContentState extends State<Content> {
                 ),
               )),
           for (int i = 0; i < plainText.length; i++) ...{
-            Container(
-                margin: const EdgeInsets.only(bottom: 10),
-                child: Text(plainText[i],
-                    style: GoogleFonts.yuseiMagic(
-                      fontWeight: FontWeight.bold,
-                      // 位置も文字も合っていない場合は黒、
-                      // 文字が合っている場合は黄色、
-                      // 両方あっている場合は緑
-                      color: colorArray[i] == 0
-                          ? Colors.black
-                          : colorArray[i] == 2
-                              ? Colors.green
-                              : Colors.yellow,
-                      fontSize: 20,
-                    ))),
+            for (int j = 0; j < plainText[i].length; j++) ...{
+              Container(
+                  margin: const EdgeInsets.only(bottom: 10),
+                  child: Text(plainText[i][j],
+                      style: GoogleFonts.yuseiMagic(
+                        fontWeight: FontWeight.bold,
+                        // 位置も文字も合っていない場合は黒、
+                        // 文字が合っている場合は黄色、
+                        // 両方あっている場合は緑
+                        color: colorArray[i * 5 + j] == 0
+                            ? Colors.black
+                            : colorArray[i * 5 + j] == 2
+                                ? Colors.green
+                                : Color.fromARGB(255, 250, 225, 0),
+                        fontSize: 20,
+                      ))),
+            },
           },
         ],
       ),
