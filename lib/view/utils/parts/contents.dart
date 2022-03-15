@@ -85,6 +85,15 @@ class _ContentState extends State<Content> {
                   color: Colors.black,
                 ),
               )),
+          Container(
+              margin: const EdgeInsets.only(bottom: 20),
+              child: Text(
+                "位置も文字も合ってる→黒、文字が合ってる→黄、両方あってる→緑",
+                style: GoogleFonts.yuseiMagic(
+                  fontSize: 10,
+                  color: Colors.black,
+                ),
+              )),
           for (int i = 0; i < plainText.length; i++) ...{
             for (int j = 0; j < plainText[i].length; j++) ...{
               Container(
