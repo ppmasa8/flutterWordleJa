@@ -32,6 +32,12 @@ class _ContentState extends State<Content> {
 
   void _updateText() {
     setState(() {
+      // 字数が5字に満たない時に空文字列を入れる
+      print(textController.text.length);
+      if (textController.text.length < 5) {
+        textController.text += " " * (5 - textController.text.length);
+      }
+      print(textController.text.length);
       plainText.addAll([textController.text]);
       print(plainText);
       checkStrings(textController.text);
@@ -80,18 +86,18 @@ class _ContentState extends State<Content> {
           Container(
               margin: const EdgeInsets.only(top: 10.0, bottom: 20),
               child: Text(
-                "手数: ${plainText.length.toString()}",
+                "位置も文字も合ってる→黒、文字が合ってる→黄、両方あってる→緑",
                 style: GoogleFonts.yuseiMagic(
-                  fontSize: 16,
+                  fontSize: 10,
                   color: Colors.black,
                 ),
               )),
           Container(
-              margin: const EdgeInsets.only(bottom: 20),
+              margin: const EdgeInsets.only(top: 10.0, bottom: 20),
               child: Text(
-                "位置も文字も合ってる→黒、文字が合ってる→黄、両方あってる→緑",
+                "手数: ${plainText.length.toString()}",
                 style: GoogleFonts.yuseiMagic(
-                  fontSize: 10,
+                  fontSize: 16,
                   color: Colors.black,
                 ),
               )),
@@ -115,7 +121,7 @@ class _ContentState extends State<Content> {
                     ),
                     children: <TextSpan>[
                       TextSpan(
-                          text: plainText[i][1] != null ? plainText[i][1] : "",
+                          text: plainText[i][1],
                           style: GoogleFonts.yuseiMagic(
                             fontWeight: FontWeight.bold,
                             // 位置も文字も合っていない場合は黒、
@@ -129,7 +135,7 @@ class _ContentState extends State<Content> {
                             fontSize: 20,
                           )),
                       TextSpan(
-                          text: plainText[i][2] != null ? plainText[i][2] : "",
+                          text: plainText[i][2],
                           style: GoogleFonts.yuseiMagic(
                             fontWeight: FontWeight.bold,
                             // 位置も文字も合っていない場合は黒、
@@ -143,7 +149,7 @@ class _ContentState extends State<Content> {
                             fontSize: 20,
                           )),
                       TextSpan(
-                          text: plainText[i][3] != null ? plainText[i][3] : "",
+                          text: plainText[i][3],
                           style: GoogleFonts.yuseiMagic(
                             fontWeight: FontWeight.bold,
                             // 位置も文字も合っていない場合は黒、
@@ -157,7 +163,7 @@ class _ContentState extends State<Content> {
                             fontSize: 20,
                           )),
                       TextSpan(
-                          text: plainText[i][4] != null ? plainText[i][4] : "",
+                          text: plainText[i][4],
                           style: GoogleFonts.yuseiMagic(
                             fontWeight: FontWeight.bold,
                             // 位置も文字も合っていない場合は黒、
