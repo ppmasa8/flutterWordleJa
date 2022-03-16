@@ -14,6 +14,7 @@ class _ContentState extends State<Content> {
   final randomString = Randomizer.Generate();
   final textController = TextEditingController();
   final plainText = <String>[];
+  final plainTextLength = <int>[];
   final colorArray = <int>[];
   String text = '';
 
@@ -95,23 +96,84 @@ class _ContentState extends State<Content> {
                 ),
               )),
           for (int i = 0; i < plainText.length; i++) ...{
-            for (int j = 0; j < plainText[i].length; j++) ...{
-              Container(
-                  margin: const EdgeInsets.only(bottom: 10),
-                  child: Text(plainText[i][j],
-                      style: GoogleFonts.yuseiMagic(
-                        fontWeight: FontWeight.bold,
-                        // 位置も文字も合っていない場合は黒、
-                        // 文字が合っている場合は黄色、
-                        // 両方あっている場合は緑
-                        color: colorArray[i * 5 + j] == 0
-                            ? Colors.black
-                            : colorArray[i * 5 + j] == 2
-                                ? Colors.green
-                                : const Color.fromARGB(255, 250, 225, 0),
-                        fontSize: 20,
-                      ))),
-            },
+            Container(
+              margin: const EdgeInsets.only(bottom: 10),
+              child: Text.rich(
+                TextSpan(
+                    text: plainText[i][0],
+                    style: GoogleFonts.yuseiMagic(
+                      fontWeight: FontWeight.bold,
+                      // 位置も文字も合っていない場合は黒、
+                      // 文字が合っている場合は黄色、
+                      // 両方あっている場合は緑
+                      color: colorArray[i * 5 + 0] == 0
+                          ? Colors.black
+                          : colorArray[i * 5 + 0] == 2
+                              ? Colors.green
+                              : const Color.fromARGB(255, 250, 225, 0),
+                      fontSize: 20,
+                    ),
+                    children: <TextSpan>[
+                      TextSpan(
+                          text: plainText[i][1] != null ? plainText[i][1] : "",
+                          style: GoogleFonts.yuseiMagic(
+                            fontWeight: FontWeight.bold,
+                            // 位置も文字も合っていない場合は黒、
+                            // 文字が合っている場合は黄色、
+                            // 両方あっている場合は緑
+                            color: colorArray[i * 5 + 1] == 0
+                                ? Colors.black
+                                : colorArray[i * 5 + 1] == 2
+                                    ? Colors.green
+                                    : const Color.fromARGB(255, 250, 225, 0),
+                            fontSize: 20,
+                          )),
+                      TextSpan(
+                          text: plainText[i][2] != null ? plainText[i][2] : "",
+                          style: GoogleFonts.yuseiMagic(
+                            fontWeight: FontWeight.bold,
+                            // 位置も文字も合っていない場合は黒、
+                            // 文字が合っている場合は黄色、
+                            // 両方あっている場合は緑
+                            color: colorArray[i * 5 + 2] == 0
+                                ? Colors.black
+                                : colorArray[i * 5 + 2] == 2
+                                    ? Colors.green
+                                    : const Color.fromARGB(255, 250, 225, 0),
+                            fontSize: 20,
+                          )),
+                      TextSpan(
+                          text: plainText[i][3] != null ? plainText[i][3] : "",
+                          style: GoogleFonts.yuseiMagic(
+                            fontWeight: FontWeight.bold,
+                            // 位置も文字も合っていない場合は黒、
+                            // 文字が合っている場合は黄色、
+                            // 両方あっている場合は緑
+                            color: colorArray[i * 5 + 3] == 0
+                                ? Colors.black
+                                : colorArray[i * 5 + 3] == 2
+                                    ? Colors.green
+                                    : const Color.fromARGB(255, 250, 225, 0),
+                            fontSize: 20,
+                          )),
+                      TextSpan(
+                          text: plainText[i][4] != null ? plainText[i][4] : "",
+                          style: GoogleFonts.yuseiMagic(
+                            fontWeight: FontWeight.bold,
+                            // 位置も文字も合っていない場合は黒、
+                            // 文字が合っている場合は黄色、
+                            // 両方あっている場合は緑
+                            color: colorArray[i * 5 + 4] == 0
+                                ? Colors.black
+                                : colorArray[i * 5 + 4] == 2
+                                    ? Colors.green
+                                    : const Color.fromARGB(255, 250, 225, 0),
+                            fontSize: 20,
+                          )),
+                      const TextSpan(text: "\n"),
+                    ]),
+              ),
+            ),
           },
         ],
       ),
