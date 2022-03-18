@@ -30,6 +30,16 @@ class _ContentState extends State<Content> {
     }
   }
 
+  void checkClear() {
+    if (colorArray[colorArray.length - 5] == 2 &&
+        colorArray[colorArray.length - 4] == 2 &&
+        colorArray[colorArray.length - 3] == 2 &&
+        colorArray[colorArray.length - 2] == 2 &&
+        colorArray[colorArray.length - 1] == 2) {
+      print("clear");
+    }
+  }
+
   void _updateText() {
     setState(() {
       // 字数が5字に満たない時に空文字列を入れる
@@ -39,6 +49,7 @@ class _ContentState extends State<Content> {
       plainText.addAll([textController.text]);
       print(plainText);
       checkStrings(textController.text);
+      checkClear();
       print(colorArray);
       textController.text = '';
       print(randomString);
