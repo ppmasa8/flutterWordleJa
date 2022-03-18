@@ -33,11 +33,9 @@ class _ContentState extends State<Content> {
   void _updateText() {
     setState(() {
       // 字数が5字に満たない時に空文字列を入れる
-      print(textController.text.length);
       if (textController.text.length < 5) {
         textController.text += " " * (5 - textController.text.length);
       }
-      print(textController.text.length);
       plainText.addAll([textController.text]);
       print(plainText);
       checkStrings(textController.text);
@@ -124,9 +122,6 @@ class _ContentState extends State<Content> {
                           text: plainText[i][1],
                           style: GoogleFonts.yuseiMagic(
                             fontWeight: FontWeight.bold,
-                            // 位置も文字も合っていない場合は黒、
-                            // 文字が合っている場合は黄色、
-                            // 両方あっている場合は緑
                             color: colorArray[i * 5 + 1] == 0
                                 ? Colors.black
                                 : colorArray[i * 5 + 1] == 2
@@ -138,9 +133,6 @@ class _ContentState extends State<Content> {
                           text: plainText[i][2],
                           style: GoogleFonts.yuseiMagic(
                             fontWeight: FontWeight.bold,
-                            // 位置も文字も合っていない場合は黒、
-                            // 文字が合っている場合は黄色、
-                            // 両方あっている場合は緑
                             color: colorArray[i * 5 + 2] == 0
                                 ? Colors.black
                                 : colorArray[i * 5 + 2] == 2
@@ -152,9 +144,6 @@ class _ContentState extends State<Content> {
                           text: plainText[i][3],
                           style: GoogleFonts.yuseiMagic(
                             fontWeight: FontWeight.bold,
-                            // 位置も文字も合っていない場合は黒、
-                            // 文字が合っている場合は黄色、
-                            // 両方あっている場合は緑
                             color: colorArray[i * 5 + 3] == 0
                                 ? Colors.black
                                 : colorArray[i * 5 + 3] == 2
@@ -166,9 +155,6 @@ class _ContentState extends State<Content> {
                           text: plainText[i][4],
                           style: GoogleFonts.yuseiMagic(
                             fontWeight: FontWeight.bold,
-                            // 位置も文字も合っていない場合は黒、
-                            // 文字が合っている場合は黄色、
-                            // 両方あっている場合は緑
                             color: colorArray[i * 5 + 4] == 0
                                 ? Colors.black
                                 : colorArray[i * 5 + 4] == 2
