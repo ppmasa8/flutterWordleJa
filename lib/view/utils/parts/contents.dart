@@ -11,11 +11,11 @@ class Content extends StatefulWidget {
 }
 
 class _ContentState extends State<Content> {
-  final randomString = Randomizer.Generate();
+  static String randomString = Randomizer.Generate();
   final textController = TextEditingController();
-  final plainText = <String>[];
-  final plainTextLength = <int>[];
-  final colorArray = <int>[];
+  static List<String> plainText = <String>[];
+  static List<int> plainTextLength = <int>[];
+  static List<int> colorArray = <int>[];
   String text = '';
 
   void checkStrings(String text) {
@@ -57,6 +57,16 @@ class _ContentState extends State<Content> {
     });
   }
 
+  void _resetText() {
+    setState(() {
+      randomString = Randomizer.Generate();
+      plainText = <String>[];
+      plainTextLength = <int>[];
+      colorArray = <int>[];
+      text = '';
+    });
+  }
+
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -85,14 +95,24 @@ class _ContentState extends State<Content> {
               },
             ),
           ),
-          TextButton(
-            child: Text('決定',
-                style: GoogleFonts.yuseiMagic(
-                  fontSize: 20,
-                  color: Colors.black,
-                )),
-            onPressed: _updateText,
-          ),
+          Row(mainAxisAlignment: MainAxisAlignment.spaceEvenly, children: [
+            TextButton(
+              child: Text('決定',
+                  style: GoogleFonts.yuseiMagic(
+                    fontSize: 20,
+                    color: Colors.black,
+                  )),
+              onPressed: _updateText,
+            ),
+            TextButton(
+              child: Text('リセット',
+                  style: GoogleFonts.yuseiMagic(
+                    fontSize: 20,
+                    color: Colors.black,
+                  )),
+              onPressed: _resetText,
+            ),
+          ]),
           Container(
               margin: const EdgeInsets.only(top: 10.0, bottom: 20),
               child: Text(
