@@ -80,13 +80,13 @@ class _ContentState extends State<Content> {
               maxLength: 10,
               inputFormatters: <TextInputFormatter>[
                 FilteringTextInputFormatter.allow(
-                    // ひらがな以外を弾くregex
-                    RegExp(r'^[\u3040-\u309F]+$')),
+                    // カタカナ以外を弾くregex
+                    RegExp(r'^[\u30A0-\u30FF]+$')),
               ],
               controller: textController,
               decoration: InputDecoration(
                 border: const OutlineInputBorder(),
-                labelText: 'ひらがなで文字を入力してね',
+                labelText: 'カタカナで文字を入力してね',
                 labelStyle: GoogleFonts.yuseiMagic(),
               ),
               onChanged: (letter) {

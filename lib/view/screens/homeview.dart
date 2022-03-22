@@ -10,7 +10,7 @@ class HomeView extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         centerTitle: true,
-        title: Text('わーどる',
+        title: Text('国名わーどる',
             style: GoogleFonts.yuseiMagic(
               color: Colors.black,
             )),
