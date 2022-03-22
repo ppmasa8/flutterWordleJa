@@ -198,9 +198,9 @@ class _ContentState extends State<Content> {
                           text: plainText[i][5],
                           style: GoogleFonts.yuseiMagic(
                             fontWeight: FontWeight.bold,
-                            color: colorArray[i * 10 + 1] == 0
+                            color: colorArray[i * 10 + 5] == 0
                                 ? Colors.black
-                                : colorArray[i * 10 + 1] == 2
+                                : colorArray[i * 10 + 5] == 2
                                     ? Colors.green
                                     : const Color.fromARGB(255, 250, 225, 0),
                             fontSize: 20,
@@ -209,9 +209,9 @@ class _ContentState extends State<Content> {
                           text: plainText[i][6],
                           style: GoogleFonts.yuseiMagic(
                             fontWeight: FontWeight.bold,
-                            color: colorArray[i * 10 + 2] == 0
+                            color: colorArray[i * 10 + 6] == 0
                                 ? Colors.black
-                                : colorArray[i * 10 + 2] == 2
+                                : colorArray[i * 10 + 6] == 2
                                     ? Colors.green
                                     : const Color.fromARGB(255, 250, 225, 0),
                             fontSize: 20,
@@ -220,9 +220,9 @@ class _ContentState extends State<Content> {
                           text: plainText[i][7],
                           style: GoogleFonts.yuseiMagic(
                             fontWeight: FontWeight.bold,
-                            color: colorArray[i * 10 + 3] == 0
+                            color: colorArray[i * 10 + 7] == 0
                                 ? Colors.black
-                                : colorArray[i * 10 + 3] == 2
+                                : colorArray[i * 10 + 7] == 2
                                     ? Colors.green
                                     : const Color.fromARGB(255, 250, 225, 0),
                             fontSize: 20,
@@ -231,9 +231,9 @@ class _ContentState extends State<Content> {
                           text: plainText[i][8],
                           style: GoogleFonts.yuseiMagic(
                             fontWeight: FontWeight.bold,
-                            color: colorArray[i * 10 + 4] == 0
+                            color: colorArray[i * 10 + 8] == 0
                                 ? Colors.black
-                                : colorArray[i * 10 + 4] == 2
+                                : colorArray[i * 10 + 8] == 2
                                     ? Colors.green
                                     : const Color.fromARGB(255, 250, 225, 0),
                             fontSize: 20,
@@ -242,9 +242,9 @@ class _ContentState extends State<Content> {
                           text: plainText[i][9],
                           style: GoogleFonts.yuseiMagic(
                             fontWeight: FontWeight.bold,
-                            color: colorArray[i * 10 + 3] == 0
+                            color: colorArray[i * 10 + 9] == 0
                                 ? Colors.black
-                                : colorArray[i * 10 + 3] == 2
+                                : colorArray[i * 10 + 9] == 2
                                     ? Colors.green
                                     : const Color.fromARGB(255, 250, 225, 0),
                             fontSize: 20,
