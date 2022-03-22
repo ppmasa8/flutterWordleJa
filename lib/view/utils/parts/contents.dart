@@ -80,8 +80,8 @@ class _ContentState extends State<Content> {
               maxLength: 10,
               inputFormatters: <TextInputFormatter>[
                 FilteringTextInputFormatter.allow(
-                    // カタカナ以外を弾くregex
-                    RegExp(r'^[\u30A0-\u30FF]+$')),
+                    // ひらがなとカタカナ以外を弾くregex
+                    RegExp(r'^[\u3040-\u30FF]+$')),
               ],
               controller: textController,
               decoration: InputDecoration(
