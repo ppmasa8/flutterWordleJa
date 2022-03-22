@@ -80,7 +80,7 @@ class Randomizer {
   static String Generate() {
     List<String> array = [];
     var rand = Random();
-    for (var i = 0; i < 5; i++) {
+    for (var i = 0; i < 10; i++) {
       array.add(hiragana[rand.nextInt(n)]);
     }
     return array.join('');

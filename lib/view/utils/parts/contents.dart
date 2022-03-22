@@ -44,8 +44,8 @@ class _ContentState extends State<Content> {
   void _updateText() {
     setState(() {
       // 字数が5字に満たない時に空文字列を入れる
-      if (textController.text.length < 5) {
-        textController.text += " " * (5 - textController.text.length);
+      if (textController.text.length < 10) {
+        textController.text += " " * (10 - textController.text.length);
       }
       plainText.addAll([textController.text]);
       print(plainText);
@@ -77,7 +77,7 @@ class _ContentState extends State<Content> {
           Container(
             margin: const EdgeInsets.only(top: 10),
             child: TextField(
-              maxLength: 5,
+              maxLength: 10,
               inputFormatters: <TextInputFormatter>[
                 FilteringTextInputFormatter.allow(
                     // ひらがな以外を弾くregex
@@ -142,9 +142,9 @@ class _ContentState extends State<Content> {
                       // 位置も文字も合っていない場合は黒、
                       // 文字が合っている場合は黄色、
                       // 両方あっている場合は緑
-                      color: colorArray[i * 5 + 0] == 0
+                      color: colorArray[i * 10 + 0] == 0
                           ? Colors.black
-                          : colorArray[i * 5 + 0] == 2
+                          : colorArray[i * 10 + 0] == 2
                               ? Colors.green
                               : const Color.fromARGB(255, 250, 225, 0),
                       fontSize: 20,
@@ -154,9 +154,9 @@ class _ContentState extends State<Content> {
                           text: plainText[i][1],
                           style: GoogleFonts.yuseiMagic(
                             fontWeight: FontWeight.bold,
-                            color: colorArray[i * 5 + 1] == 0
+                            color: colorArray[i * 10 + 1] == 0
                                 ? Colors.black
-                                : colorArray[i * 5 + 1] == 2
+                                : colorArray[i * 10 + 1] == 2
                                     ? Colors.green
                                     : const Color.fromARGB(255, 250, 225, 0),
                             fontSize: 20,
@@ -165,9 +165,9 @@ class _ContentState extends State<Content> {
                           text: plainText[i][2],
                           style: GoogleFonts.yuseiMagic(
                             fontWeight: FontWeight.bold,
-                            color: colorArray[i * 5 + 2] == 0
+                            color: colorArray[i * 10 + 2] == 0
                                 ? Colors.black
-                                : colorArray[i * 5 + 2] == 2
+                                : colorArray[i * 10 + 2] == 2
                                     ? Colors.green
                                     : const Color.fromARGB(255, 250, 225, 0),
                             fontSize: 20,
@@ -176,9 +176,9 @@ class _ContentState extends State<Content> {
                           text: plainText[i][3],
                           style: GoogleFonts.yuseiMagic(
                             fontWeight: FontWeight.bold,
-                            color: colorArray[i * 5 + 3] == 0
+                            color: colorArray[i * 10 + 3] == 0
                                 ? Colors.black
-                                : colorArray[i * 5 + 3] == 2
+                                : colorArray[i * 10 + 3] == 2
                                     ? Colors.green
                                     : const Color.fromARGB(255, 250, 225, 0),
                             fontSize: 20,
@@ -187,9 +187,64 @@ class _ContentState extends State<Content> {
                           text: plainText[i][4],
                           style: GoogleFonts.yuseiMagic(
                             fontWeight: FontWeight.bold,
-                            color: colorArray[i * 5 + 4] == 0
+                            color: colorArray[i * 10 + 4] == 0
                                 ? Colors.black
-                                : colorArray[i * 5 + 4] == 2
+                                : colorArray[i * 10 + 4] == 2
+                                    ? Colors.green
+                                    : const Color.fromARGB(255, 250, 225, 0),
+                            fontSize: 20,
+                          )),
+                          TextSpan(
+                          text: plainText[i][5],
+                          style: GoogleFonts.yuseiMagic(
+                            fontWeight: FontWeight.bold,
+                            color: colorArray[i * 10 + 1] == 0
+                                ? Colors.black
+                                : colorArray[i * 10 + 1] == 2
+                                    ? Colors.green
+                                    : const Color.fromARGB(255, 250, 225, 0),
+                            fontSize: 20,
+                          )),
+                      TextSpan(
+                          text: plainText[i][6],
+                          style: GoogleFonts.yuseiMagic(
+                            fontWeight: FontWeight.bold,
+                            color: colorArray[i * 10 + 2] == 0
+                                ? Colors.black
+                                : colorArray[i * 10 + 2] == 2
+                                    ? Colors.green
+                                    : const Color.fromARGB(255, 250, 225, 0),
+                            fontSize: 20,
+                          )),
+                      TextSpan(
+                          text: plainText[i][7],
+                          style: GoogleFonts.yuseiMagic(
+                            fontWeight: FontWeight.bold,
+                            color: colorArray[i * 10 + 3] == 0
+                                ? Colors.black
+                                : colorArray[i * 10 + 3] == 2
+                                    ? Colors.green
+                                    : const Color.fromARGB(255, 250, 225, 0),
+                            fontSize: 20,
+                          )),
+                      TextSpan(
+                          text: plainText[i][8],
+                          style: GoogleFonts.yuseiMagic(
+                            fontWeight: FontWeight.bold,
+                            color: colorArray[i * 10 + 4] == 0
+                                ? Colors.black
+                                : colorArray[i * 10 + 4] == 2
+                                    ? Colors.green
+                                    : const Color.fromARGB(255, 250, 225, 0),
+                            fontSize: 20,
+                          )),
+                          TextSpan(
+                          text: plainText[i][9],
+                          style: GoogleFonts.yuseiMagic(
+                            fontWeight: FontWeight.bold,
+                            color: colorArray[i * 10 + 3] == 0
+                                ? Colors.black
+                                : colorArray[i * 10 + 3] == 2
                                     ? Colors.green
                                     : const Color.fromARGB(255, 250, 225, 0),
                             fontSize: 20,
