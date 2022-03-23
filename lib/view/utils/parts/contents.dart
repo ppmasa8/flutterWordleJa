@@ -43,7 +43,7 @@ class _ContentState extends State<Content> {
 
   void _updateText() {
     setState(() {
-      // 字数が5字に満たない時に空文字列を入れる
+      // 字数が10字に満たない時に空文字列を入れる
       if (textController.text.length < 10) {
         textController.text += " " * (10 - textController.text.length);
       }
